@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linktree</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extends: {
+          animation: {
+            'bounce-slow': 'bounce 2s infinite',
+            'fade-in': 'fadeIn 1.5s ease-in-out',
+            'pulse-slow': 'pulse 3s infinte'
+          },
+          Keyframe: {
+            fadeIn: {
+              '0%': { opacity: 0 },
+              '100%': { opacity: 1 },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background: linear-gradient(130deg, #0f2027, #203a43, #2c5364);
+      background-size: 300% 300%;
+      animation: backgroundShift 6s infinite;
+    }
+
+    @keyframes backgroundShift {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-color: 0% 50%;
+      }
+    }
+
+    .gradient-text {
+      background: linear-gradient(to right, #30cfd0, #330867);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    @keyframes pulse-slow {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body class="text-white flex flex-col items-center min-h-screen justify-center">
+  <!-- Profile section -->
+  <div class="text-center mb-8 animate-fade-in">
+    <img id="profile-pic" src="image.png" alt="profile picture"
+      class="w-32 h-32 rounded-full mx-auto shadow-lg hover:scale-110 transform transition duration-300 glow">
+    <h1
+      class="text-4xl fontt-bold mt-4 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text animate-pulse-slow">
+      Full-Stack Developer 💻
+    </h1>
+    <p class="text-gray-300 mt-2">Creating solutions that work beatifully</p>
+  </div>
+
+  <!-- Link secction -->
+  <div class="space-y-6 animate-fade-in">
+    <!-- Button: Work Together -->
+    <button onclick="openWhatsApp('Halo, saya tertarik untuk bekerja sama dengan Anda.')" class="block w-full max-w-sm mx-auto text-center bg-gradient-to-r from-green-400 to-blue-500 py-4 
+      px-8 rounded-lg text-xl font-bold shadow-2xl hover:scale-110 transform transition-all duration-500 
+      animate-pulse-slow glow hover:shadow-2xl hover:shadow-blue-500/50">
+      🤝 Work Together
+    </button>
+
+    <!-- Button: Joki Tugas Website -->
+    <button onclick="openWhatsApp('Halo, saya ingin jasa joki tugas website.')" class="block w-full max-w-sm mx-auto text-center bg-gradient-to-r from-purple-400 
+      to-pink-500 py-4 px-8 rounded-lg text-xl font-bold shadow-2xl hover:scale-110 
+      transform transition-all duration-500 animate-pulse-slow glow 
+      hover:shadow-2xl hover:shadow-pink-500/50">
+      🛠️ Task Helper
+    </button>
+
+    <!-- Button: Website Creation -->
+    <button onclick="openWhatsApp('Halo, saya tertarik dengan jasa pembuatan website.')"
+      class="block w-full max-w-sm mx-auto text-center bg-gradient-to-r from-yellow-400 
+      to-red-500 py-4 px-8 rounded-lg text-xl font-bold shadow-2xl hover:scale-110 transform transition-all duration-500 animate-pulse-slow glow hover:shadow-2xl hover:shadow-red-500/50">
+      🌐 Web Creation Service
+    </button>
+
+    <!-- Social Links -->
+    <div class="flex justify-center space-x-4 mt-6">
+      <a href="https://www.youtube.com/@Maszal_22" target="_blank"
+        class="text-red-500 hover:scale-125 transform transition duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M19.615 3.184C20.888 3.513 22 4.638 22 6v12c0 1.367-1.11 2.49-2.382 2.819-2.184.564-8.188.564-10.372 0C3.75 20.322 2 18.897 2 16V8c0-1.7 1.71-3.127 4.246-3.643 2.185-.564 8.189-.564 10.373 0l.004-.003zm-6.609 12.194v-8.756L15.5 10.57l-2.494 1.393v3.416z" />
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/fakhrizal-garnindyo-748398290" target="_blank"
+        class="text-blue-500 hover:scale-125 transform transition duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M19.999 2H4.002C2.896 2 2 2.895 2 3.997v16.006C2 21.102 2.896 22 4.002 22H20c1.105 0 2-.897 2-2.002V3.997C22 2.895 21.105 2 19.999 2zM8.203 18.8H5.644V9.799h2.559v9.001zm-1.279-10.5h-.015c-.861 0-1.421-.594-1.421-1.342 0-.764.574-1.343 1.452-1.343s1.421.58 1.437 1.343c0 .748-.576 1.342-1.453 1.342zm11.553 10.5h-2.572v-4.875c0-1.185-.421-1.992-1.475-1.992-.805 0-1.285.551-1.497 1.086-.077.188-.097.447-.097.709v5.072h-2.572s.034-8.232 0-9.001h2.572v1.272c.342-.513.957-1.243 2.331-1.243 1.702 0 2.976 1.109 2.976 3.493v5.479z" />
+        </svg>
+      </a>
+      <a href="https://www.instagram.com/maszal_08/" target="_blank"
+        class="text-pink-500 hover:scale-125 transform transition duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M12 2.162c3.2 0 3.584.01 4.849.07 1.259.06 2.033.284 2.515.608.535.359.923.835 1.282 1.303.352.464.588 1.093.678 1.954.08.993.072 1.392.072 4.904s.009 3.911-.072 4.904c-.091.861-.326 1.49-.678 1.954-.359.468-.747.945-1.282 1.303-.482.324-1.256.548-2.515.608-1.265.06-1.649.07-4.849.07-3.2 0-3.584-.01-4.849-.07-1.259-.06-2.033-.284-2.515-.608-.535-.359-.923-.835-1.282-1.303-.352-.464-.588-1.093-.678-1.954-.08-.993-.072-1.392-.072-4.904s-.009-3.911.072-4.904c.091-.861.326-1.49.678-1.954.359-.468.747-.945 1.282-1.303.482-.324 1.256-.548 2.515-.608 1.265-.06 1.649-.07 4.849-.07m0-2.162c-3.225 0-3.633.012-4.907.072-1.345.065-2.27.311-3.084.765-.84.467-1.554 1.181-2.021 2.021-.454.813-.7 1.739-.765 3.084-.06 1.275-.072 1.683-.072 4.907s.012 3.633.072 4.907c.065 1.345.311 2.27.765 3.084.467.84 1.181 1.554 2.021 2.021.813.454 1.739.7 3.084.765 1.275.06 1.683.072 4.907.072s3.633-.012 4.907-.072c1.345-.065 2.27-.311 3.084-.765.84-.467 1.554-1.181 2.021-2.021.454-.813.7-1.739.765-3.084.06-1.275.072-1.683.072-4.907s-.012-3.633-.072-4.907c-.065-1.345-.311-2.27-.765-3.084-.467-.84-1.181-1.554-2.021-2.021-.813-.454-1.739-.7-3.084-.765-1.275-.06-1.683-.072-4.907-.072z" />
+          <circle cx="12" cy="12" r="3.5" />
+        </svg>
+      </a>
+    </div>
+  </div>
+  <script>
+    function openWhastApp(message) {
+      const url = `https://wa.me/6281131172883?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank')
+    }
+  </script>
+</body>
+
+</html>
